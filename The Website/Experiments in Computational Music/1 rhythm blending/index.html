@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <!-- P5 Libraries -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.17/p5.min.js"></script>     
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.17/addons/p5.dom.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.17/addons/p5.sound.min.js"></script>
+        
+        <!-- Rhythm Blending resources -->	
+        <script src="../resources/resources.js"></script>
+        <script src="../resources/shapes.js"></script>
+        <script src="rhythmPresets.js"></script>
+        <script src="rhythm_visualization.js"></script>
+        <script src="rhythm_blending.js"></script>
+        <script src="shape_blending.js"></script>
+        <script src="rhythm_blending_2.js"></script>
+        
+        <!-- parameters for canvases -->
+        <script>
+            var neutralColor = 'rgb(17, 55, 103)';
+            var brightColor = 'rgb(200, 100, 0)';
+            var lineThickness = 2;
+            var dotSize = 14;
+            var bkgdColor = 'rgb(235, 235, 235)';
+            var w = 400, h = 200;
+        </script>
+        
+        <!-- canvas initialization -->
+        <script>       
+            new p5(new shape_blending('example-1', w, h, neutralColor, brightColor, lineThickness, 0.5*dotSize, bkgdColor));
+            
+            var playableCanvases = [];
+        
+            playableCanvases.push(new p5(new rhythm_visualization('example-2', w, h, neutralColor, brightColor, lineThickness, dotSize, bkgdColor)));
+            playableCanvases.push(new p5(new rhythm_blending('example-3', w, h, neutralColor, brightColor, lineThickness, dotSize, bkgdColor, true, 1)));
+            playableCanvases.push(new p5(new rhythm_blending_2('example-4', w, h, neutralColor, brightColor, lineThickness, dotSize, bkgdColor, true, "continuous", 1)));          
+            playableCanvases.push(new p5(new rhythm_blending_2('example-5', w, h, neutralColor, brightColor, lineThickness, dotSize, bkgdColor, false, "continuous", 1)));
+            playableCanvases.push(new p5(new rhythm_blending_2('example-6', w, h, neutralColor, brightColor, lineThickness, dotSize, bkgdColor, false, "discrete", 1)));
+            playableCanvases.push(new p5(new rhythm_blending_2('example-7', w, h, neutralColor, brightColor, lineThickness, dotSize, bkgdColor, true, "discrete", 0)));
+            playableCanvases.push(new p5(new rhythm_blending_2('example-8', w, h, neutralColor, brightColor, lineThickness, dotSize, bkgdColor, false, "discrete", 0)));
+            playableCanvases.push(new p5(new rhythm_blending_2('example-9', w, h, neutralColor, brightColor, lineThickness, dotSize, bkgdColor, false, "discrete", 2)));
+        </script>
+
+        <!-- stop playback callback -->
+        <script>
+            function stopPlayback() {
+                for (var i=0; i<playableCanvases.length; i++) {
+                    playableCanvases[i].stopPlayback();
+                }
+            }
+        </script>
+        
+        <meta charset="utf-8">
+          <title>Rhythm Blending</title>
+          <link rel="stylesheet" type="text/css" href="../../css/website.css">
+          <link rel="stylesheet" type="text/css" href="../../css/normalize.css">
+          <script type="text/javascript" src="../../js/modernizr.js"></script>
+
+	</head>
+
+	<body>
+      <div>
+        <!-- Write-up -->
+        <div>
+          <div>
+            <div>
+              <h1 class="writing-entry-heading-text">Rhythm Blending (Experiments in Computational Music)</h1>
+                
+              <div class="writing-entry-text-block">Take a look at the shape below. It will change if you move your mouse from one side of the browser window to the other.</div>
+
+              <div class="writing-entry-text-block" id="example-1"></div>
+                
+              <div class="writing-entry-text-block">As you move your mouse from side to side, the shape drifts from one form to another. What's happening is that each vertex in the shape is moved along a linear path. We call this linear interpolation. Linear interpolation is widely used in computer graphics for constructing animations. </div>
+                
+              <div class="writing-entry-text-block">I wanted to see how I could use linear interpolation to create music. Rhythms are a good place to start. Rhythms, like shapes, can be defined as a collection of points, which are drawn as blue dots. </div>
+
+              
+              <div class="writing-entry-text-block">Specifically, let's talk about percussive rhythms such as those created by a snare drum or a bass drum. Though we think of a note made by a piano as having a duration, the hit of a snare drum is almost instanteous. It's not exactly instantaneous. Of course it has some duration. But we can think of it as instanteous. This is the analogy between percussive notes and points. Percussive notes have no extension in time (they're instantaneous), and points have no extension in space.  </div>
+                
+              <div class="writing-entry-text-block">So below there is a randomly-generated rhythm drawn as a series of blue dots, or points. If you click on the canvas, the rhythm will play and animate. If you click it again, playback will stop.</div>
+                
+              <div class="writing-entry-text-block" id="example-2"> </div>
+                
+              <div class="writing-entry-text-block">Using the same process of linear interpolation from the first example, we can change the form of the rhythm. In the example below, moving the mouse cursor left and right modifies the rhythm. Again: click on the canvas to toggle playback.</div>
+                
+              <div class="writing-entry-text-block" id="example-3"> </div>
+                
+              <div class="writing-entry-text-block">Things become more musically interesting when we have two rhythms play at the same time, as in the example below. Try to notice how they move in the same way but in opposite directions. Try also to notice how the two rhythms meet in the middle: if you put your mouse cursor in the middle of the browser, the rhythms will be in sync with each other.</div>
+                
+              <div class="writing-entry-text-block" id="example-4"></div>
+
+              <div class="writing-entry-text-block">We can automate the process of blending between rhythms. Click the example below and see how they change form gradually.</div>
+            
+              <div class="writing-entry-text-block" id="example-5"></div>
+                
+              <div class="writing-entry-text-block">In the next example, they change form in discrete steps. This makes it so the rhythms always have clean, rational relationships to one another.</div>
+                
+              <div class="writing-entry-text-block" id="example-6"></div>
+                
+              <div class="push-right">   
+                <h4 class="writing-entry-sub-heading">Some Extra Examples</h4>
+              </div>
+                
+              <div class="writing-entry-text-block">Another couple of rhythms you can control with your mouse:</div>       
+                
+              <div class="writing-entry-text-block" id="example-7"></div>
+                
+              <div class="writing-entry-text-block">Those same rhythms---but made to change automatically:</div>     
+            
+              <div class="writing-entry-text-block" id="example-8"></div>
+                
+              <div class="writing-entry-text-block">An example with randomly-generated rhythms:</div>     
+        
+              <div class="writing-entry-text-block" id="example-9"></div>
+                
+              <div class="push-right">   
+                <h4 class="writing-entry-sub-heading">Possible Uses</h4>
+              </div>
+                
+              <div class="writing-entry-text-block">So what actual applications are there of this idea? What can one do with it?<br><br>One possible use is in the form of the compound rhythms that I've been showing, the examples which have two rhythms playing simultaneously.<br><br> Another possible use of the idea is as a way of transitioning between different sections of a song gradually rather than suddenly.</div>
+              
+              <div class="push-right">   
+                <h4 class="writing-entry-sub-heading">Future Work</h4>
+              </div>
+                
+              <div class="writing-entry-text-block">Though I've focused on percussive rhythms, there's nothing stopping this idea from being applied to non-percussive rhythms, rhythms involving sustained notes. I've focused on percussive rhythms because its easy to model them as sets of points. But non-percussive rhythms could be modeled as sets of lines and subjected to the same blending procedures.</div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	</body>
+</html>
