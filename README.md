@@ -1,3 +1,5 @@
+#[Experiments In Computational Music](http://jamesmorrowdesign.com/ECM/)
+
 # What
 
 This is a series exploring music through computation. For each entry, I start with a concept and develop it through software. There is a write-up that explains the concept and describes what I did with it. Some of the software is embedded in the write-up. 
@@ -19,7 +21,7 @@ Finally, this project is an opportunity to explore ways of visualizing music, ma
 
 # Road Map
 
-* Rhythm Blending
+* [Rhythm Blending](http://jamesmorrowdesign.com/ECM/1%20rhythm%20blending/)
 * Loop / Cut
 * Markov Chains
 * Tempo Fluctuations
