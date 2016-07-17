@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Page Style -->
+<meta charset="utf-8">
+<title>Loop / Cut</title>
+<link rel="stylesheet" type="text/css" href="toggle_style.css">
+<link rel="stylesheet" type="text/css" href="../../css/page_style.css">
+<link rel="stylesheet" type="text/css" href="../../css/website.css">
+<link rel="stylesheet" type="text/css" href="../../css/normalize.css">
+<script type="text/javascript" src="../../js/modernizr.js"></script>    
+
+<!-- P5 Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.17/p5.min.js"></script>     
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.17/addons/p5.dom.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.17/addons/p5.sound.min.js"></script>
+
+<!-- Resources -->	
+<script src="../resources/resources.js"></script>
+<script src="../resources/shapes.js"></script>
+<script src="../resources/controllers.js"></script>
+
+<!-- App -->  
+<script src="grid.js"></script>
+<script src="audioplayer.js"></script>
+<script>
+//first set of audio samples
+var player1 = audioplayer("loop-1", "loop 1");
+new p5(player1);
+var player2 = audioplayer("loop-2", "loop 2");
+new p5(player2);
+
+//second set of audio samples
+var player3 = audioplayer("loop-1-reprise", "loop 1");
+new p5(player3);
+var player4 = audioplayer("loop-2-reprise", "loop 2");
+new p5(player4);
+var player5 = audioplayer("loop-3", "loop 3");
+new p5(player5);
+
+//set of grids
+var grid1 = grid("grid-1");
+new p5(grid1);
+</script>
+</head>
+
+<body>
+    <!-- Write-up -->
+    <div class="w-container">
+        <div class="w-row writing-entry-container">
+            <div class="w-col w-col-8 writing-entry-column">
+                <h1 class="writing-entry-heading-text">Loop / Cut (Experiments in Computational Music)</h1>
+				<h5 class="writing-entry-heading-text">November 2015</h5>
+                <div class="push-right"><h4 class="writing-entry-sub-heading">Loop</h4></div>
+                <div class="writing-entry-text-block">
+                    Loops are the basis for many pieces of music, electronic and otherwise. The only real difference between loops in electronic music and loops in other forms of music is whether the loop is played by machine or musician. For our purposes here, we can treat these two cases the same. The act of looping audio is a powerful technique for musicians. It can even create the perception of music where otherwise we would only hear sound.
+
+                    <br><br>The thing about loops, of course, is that they are repetitive. It's this property that can make them <a href="https://www.youtube.com/watch?v=3KCEORhfk9M" target="_blank">compelling</a> in some cases and <a href="https://www.youtube.com/watch?v=kqJhisHVYAE" target="_blank">grating</a> in others.
+                </div>
+                <div class="push-right"><h4 class="writing-entry-sub-heading">Loop / Cut</h4></div> 
+                <div class="writing-entry-text-block">
+                    We can introduce some variation into our repetitive loops when by manipulating them. One way to manipulate loops is to cut them. We can take a piece of audio, loop it (repeating it infinitely), cut it off at a finite point, and then loop that. We end up with a loop of audio that is locally the same as the loop we started with but globally different. Loop 2 is the result of applying that process to Loop 1. Press the waveforms to toggle playback on and off.<br><br>
+
+                    <div id="loop-1"></div>
+                    <div id="loop-2"></div>
+
+                    (Source of Loop 1: "Carnival" by <a href="https://davidkanaga.bandcamp.com/" target="_blank">David Kanaga</a>)<br><br>You'll notice that the second loop behaves just like the first loop until it gets clipped off. The fact that it gets clipped off before it's allowed to fully repeat creates a new rhythmic pattern.
+
+                    <br><br>That was an example of the technique on raw audio. We can also use this loop/cut technique on musical phrases. For this, I've created a program that visualizes rhythms as grids of cells. Clicking on a cell changes it's state. Yellow cells are notes and white cells are rests. The slider controls the number of notes in the rhythm.
+
+                    <div id="grid-1"></div>
+
+                    <br><br>The band <a target="_blank" href="http://meshuggah.net">Meshuggah</a> has a very particular way of using this technique to create music that is really rhythmically compelling. They'll start with an odd-time rhythmic phrase and repeat it. Then they'll loop it and cut it in such a way that it becomes a 4/4 phrase. They'll play this rhythm against a simple 4/4 rhythm on the snare and hi hat. The result is something that locally is polyrhythmic (playing an odd time against the 4/4 of the snare and hi hat), but globally is just a long rhythmic phrase in 4/4.<br><br>
+
+                    <div id="grid-2"></div>      
+
+                </div>
+
+                <div class="push-right"><h4 class="writing-entry-sub-heading">Higher Order Loops</h4></div>
+
+                <div class="writing-entry-text-block">
+                    Starting with a single loop, we can create a second loop using the idea of loop/cut. We can then use that second loop to create a third loop using loop/cut. We can continue on in this way an arbitrary number of times. We can think of this as a process of creating higher-order loops.
+                    <div id="loop-1-reprise"></div>
+                    <div id="loop-2-reprise"></div>
+                    <div id="loop-3"></div>
+                    (Source of Loop 1: "Carnival" by <a href="https://davidkanaga.bandcamp.com/" target="_blank">David Kanaga</a>)<br><br>
+                    We took a 2-measure loop and loop/cut it, turning it into a 5-measure loop. Then we took the 5-measure loop and loop/cut it, turning it into a 16-measure loop. 
+                </div>
+
+                <div class="push-right"><h4 class="writing-entry-sub-heading">More Verbs</h4></div>
+                <div class="writing-entry-text-block">
+                    Loop/Cut is just one thing we can do to loops. If we wanted to, we could add more verbs to our vocabulary: splice, join, stack, flip, and so on. With the addition of more verbs the range of ideas we can express get larger. We can create more than just chains of looping and cutting. Now we can create families of loops of different shapes and sizes.
+                </div>
+                
+                
+                <div class="push-right"><h4 class="writing-entry-sub-heading">Conclusions</h4></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</body>
+</html>

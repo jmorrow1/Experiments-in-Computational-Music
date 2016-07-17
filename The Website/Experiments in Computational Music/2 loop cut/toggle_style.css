@@ -1,0 +1,38 @@
+.toggle {
+    margin-top: 20px;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    bottom: 2px;
+    left: 2px;
+    background:  #c27f1a;;
+    display: inline-block;
+}
+.toggle label {
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    position: absolute;
+    left: 2px;
+    bottom: 2px;
+    background: #c27f1a;
+}
+.toggle label:after {
+    content: '';
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background: white;
+    opacity: 0;
+}
+.toggle label:hover::after {
+
+}
+.toggle input[type=checkbox] {
+    visibility: hidden;
+}
+.toggle input[type=checkbox]:checked + label:after {
+    opacity: 1;
+}

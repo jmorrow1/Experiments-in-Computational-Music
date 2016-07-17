@@ -50,21 +50,25 @@
             }
         </script>
         
-        <meta charset="utf-8">
-          <title>Rhythm Blending</title>
-          <link rel="stylesheet" type="text/css" href="../../css/website.css">
-          <link rel="stylesheet" type="text/css" href="../../css/normalize.css">
-          <script type="text/javascript" src="../../js/modernizr.js"></script>
+        <!-- Page Style -->
+    
+      <meta charset="utf-8">
+      <title>Rhythm Blending</title>
+      <link rel="stylesheet" type="text/css" href="../../css/page_style.css">
+      <link rel="stylesheet" type="text/css" href="../../css/website.css">
+      <link rel="stylesheet" type="text/css" href="../../css/normalize.css">
+      <script type="text/javascript" src="../../js/modernizr.js"></script>
 
 	</head>
 
 	<body>
       <div>
         <!-- Write-up -->
-        <div>
-          <div>
-            <div>
+        <div class="w-container">
+        <div class="w-row writing-entry-container">
+          <div class="w-col w-col-8 writing-entry-column">
               <h1 class="writing-entry-heading-text">Rhythm Blending (Experiments in Computational Music)</h1>
+			  <h5 class="writing-entry-heading-text">November 2015</h5>
                 
               <div class="writing-entry-text-block">Take a look at the shape below. It will change if you move your mouse from one side of the browser window to the other.</div>
 
@@ -77,11 +81,11 @@
               
               <div class="writing-entry-text-block">Specifically, let's talk about percussive rhythms such as those created by a snare drum or a bass drum. Though we think of a note made by a piano as having a duration, the hit of a snare drum is almost instanteous. It's not exactly instantaneous. Of course it has some duration. But we can think of it as instanteous. This is the analogy between percussive notes and points. Percussive notes have no extension in time (they're instantaneous), and points have no extension in space.  </div>
                 
-              <div class="writing-entry-text-block">So below there is a randomly-generated rhythm drawn as a series of blue dots, or points. If you click on the canvas, the rhythm will play and animate. If you click it again, playback will stop.</div>
+              <div class="writing-entry-text-block">So below there is a randomly-generated rhythm drawn as a series of blue dots, or points. If you press on the canvas, the rhythm will play and animate. If you press it again, playback will stop.</div>
                 
               <div class="writing-entry-text-block" id="example-2"> </div>
                 
-              <div class="writing-entry-text-block">Using the same process of linear interpolation from the first example, we can change the form of the rhythm. In the example below, moving the mouse cursor left and right modifies the rhythm. Again: click on the canvas to toggle playback.</div>
+              <div class="writing-entry-text-block">Using the same process of linear interpolation from the first example, we can change the form of the rhythm. In the example below, moving the mouse cursor left and right modifies the rhythm. Again: press on the canvas to toggle playback.</div>
                 
               <div class="writing-entry-text-block" id="example-3"> </div>
                 
@@ -129,7 +133,6 @@
             </div>
           </div>
         </div>
-      </div>
       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	</body>
 </html>
