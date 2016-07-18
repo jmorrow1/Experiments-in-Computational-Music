@@ -23,6 +23,5 @@ Finally, this project is an opportunity to explore ways of visualizing music, ma
 
 * [Rhythm Blending](http://jamesmorrowdesign.com/ECM/1%20rhythm%20blending/)
 * Loop / Cut
-* Markov Chains
 * Tempo Fluctuations
 * Melody Stepping
