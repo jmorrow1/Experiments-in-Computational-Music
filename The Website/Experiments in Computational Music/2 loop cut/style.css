@@ -1,3 +1,40 @@
+.loop {
+    display: inline-block;
+}
+
+.grid {
+    
+}
+
+.playToggle {
+    margin-top: 20px;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    display: inline-block;
+}
+.playToggle label {
+    width: 0;
+	height: 0;
+	border-top: 13px solid transparent;
+	border-left: 26px solid #c27f1a;
+	border-bottom: 13px solid transparent;
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    background: white;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.playToggle input[type=checkbox] {
+    visibility: hidden;
+}
+
+.playToggle input[type=checkbox]:checked + label {
+    background: #c27f1a;
+}
+
 .toggle {
     margin-top: 20px;
     width: 30px;
@@ -5,7 +42,7 @@
     position: relative;
     bottom: 2px;
     left: 2px;
-    background:  #c27f1a;;
+    background:  #c27f1a;
     display: inline-block;
 }
 .toggle label {
