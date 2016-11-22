@@ -1,4 +1,4 @@
-#[Experiments In Computational Music](http://jamesmorrowdesign.com/ECM/)
+#[Experiments In Computational Music](http://jamesmorrowdesign.com/ecm/)
 
 # What
 
@@ -21,7 +21,7 @@ Finally, this project is an opportunity to explore ways of visualizing music, ma
 
 # Road Map
 
-* [Rhythm Blending](http://jamesmorrowdesign.com/ECM/1%20rhythm%20blending/)
+* [Rhythm Blending](http://jamesmorrowdesign.com/ecm/rhythm-blending)
 * Loop / Cut
 * Tempo Fluctuations
 * Melody Stepping
